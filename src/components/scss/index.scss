@@ -1,0 +1,121 @@
+@use 'util/mixins.scss' as mix;
+@use 'util/vars.scss' as var;
+@import 'app.scss';
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    @include mix.flex($direction: 'column');
+    @include mix.mobile(){
+        font-size: 12px;
+    };
+    width: 100vw;
+    position: relative;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    background-color: var.$dark-color;
+    color: var.$light-color;
+}
+
+
+// components
+//landing
+
+.Landing{
+    @include mix.flex($direction: column);
+    height: 53vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.60));
+
+    & > *{
+        margin: 10px;
+        max-width: 70%;
+    }
+
+    & h1{
+        font-size: 5em;
+    }
+    & .landing-btn{
+        padding: 15px 25px;
+        font-size: 1.2em;
+        background: transparent;
+        color: var.$light-color;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1.5px solid rgb(255, 0, 0);
+        transition: .4s ease;
+
+        &:hover{
+            transform: translateY(-5px);
+            border-color: rgb(189, 0, 0);
+        }
+    }
+}
+
+// contact
+
+.Contact-comp{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px;
+    border-top: 1px solid var.$light-color;
+
+    & .left,
+    & .right{
+        @include mix.flex($direction: column);
+    }
+    
+    & .google-map-con{
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    & .left{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        & .left{
+            @include mix.flex($direction: column);
+            & p{
+                margin: 10px;
+            }
+        }
+
+        & ul{
+            @include mix.flex();
+            list-style: none;
+            & li{
+                margin: 1em;
+    
+                & a{
+                    text-decoration: none;
+                    color: var.$light-color;
+                    &:hover{
+                        color: rgb(255, 0, 0);
+                    }
+                    & .active{
+                        color: rgb(255, 0, 0);
+                    }
+                    & > svg{
+                        height: 2em;
+                        width: 2em;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+}
+
+
+
