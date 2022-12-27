@@ -43,6 +43,13 @@ body{
     & h1{
         font-size: 5em;
     }
+
+    & .landing-description{
+        width: 50%;
+        font-size: var.$bigger-font;
+        text-align-last: center;
+    }
+
     & .landing-btn{
         padding: 15px 25px;
         font-size: 1.2em;
@@ -67,55 +74,73 @@ body{
     grid-template-columns: 1fr 1fr;
     padding: 50px;
     border-top: 1px solid var.$light-color;
-
-    & .left,
+    font-size: var.$bigger-font;
+    & .contact-info,
     & .right{
         @include mix.flex($direction: column);
     }
     
+    & .contact-info{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "encourgment encourgment"
+        "bottom-left bottom-right";
+
+        & .encourgment{
+            grid-area: encourgment;
+            @include mix.flex($align: flex-start);
+            font-size: 50px;
+        }
+        
+        & .left{
+            @include mix.flex($direction: column, $align: flex-start);
+            grid-area: bottom-left;
+            & p{
+                margin-bottom: 10px;
+            }
+            & span{
+                @include mix.flex($justify: flex-start);
+                & > *{
+                    margin: 10px;
+                }
+            }
+        }
+        & .right{
+            grid-area: bottom-right;
+            & ul{
+                @include mix.flex();
+                list-style: none;
+                & li{
+                    margin: .5em;
+                    
+                    & a{
+                        text-decoration: none;
+                        color: var.$light-color;
+                        &:hover{
+                            color: rgb(255, 0, 0);
+                        }
+                        & .active{
+                            color: rgb(255, 0, 0);
+                        }
+                        & > svg{
+                            height: 2em;
+                            width: 2em;
+                        }
+                    }
+                }
+                
+            }
+        }
+        
+    }
     & .google-map-con{
         display: flex;
         justify-content: flex-end;
     }
-    
-    & .left{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        & .left{
-            @include mix.flex($direction: column);
-            & p{
-                margin: 10px;
-            }
-        }
-
-        & ul{
-            @include mix.flex();
-            list-style: none;
-            & li{
-                margin: 1em;
-    
-                & a{
-                    text-decoration: none;
-                    color: var.$light-color;
-                    &:hover{
-                        color: rgb(255, 0, 0);
-                    }
-                    & .active{
-                        color: rgb(255, 0, 0);
-                    }
-                    & > svg{
-                        height: 2em;
-                        width: 2em;
-                    }
-                }
-            }
-
-        }
-
-    }
-
 }
+
 
 
 

@@ -6,7 +6,6 @@
     display: flex;
     flex-direction: column ;
     width: 100vw;
-    height: 200vh;
 }
 
 .navbar{
@@ -16,7 +15,7 @@
     width: 100vw;
     height: 7vh;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2fr 1fr;
     background-color: var.$light-color;
     color: var.$dark-color;
     box-shadow: 0px 24px 48px -17px rgba(0, 0, 0, 1);
@@ -42,6 +41,16 @@
                 & .active{
                     color: rgb(255, 0, 0);
                 }
+            }
+        }
+    }
+    & .phone-number{
+        @include mix.flex();
+        font-size: 30px;
+        & > span{
+            @include mix.flex();
+            & > *{
+                margin-right: 10px;
             }
         }
     }

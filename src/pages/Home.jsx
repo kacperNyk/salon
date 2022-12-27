@@ -2,7 +2,7 @@ import Landing from "../components/Landing"
 import landingPhoto from '../assets/img/home-landing.png'
 import Contactcomp from '../components/Contactcomp'
 
-const description = "to jeset opis strony lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem"
+const description = "Dobry stylista fryzur sprawi, że odnajdziesz w sobie zapomnianą pewność siebie i wdzięk, niezależnie od tego, gdzie się wybierasz. Nasze stylizacje zawsze dopasowujemy indywidualnie. Dbamy zarówno o kondycję Twoich włosów, jak i o Twoje samopoczucie."
 
 const Home = () => {
   return <div className="Home">

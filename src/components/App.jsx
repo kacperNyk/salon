@@ -8,12 +8,12 @@ import Prices from '../pages/Prices'
 import Home from '../pages/Home';
 import Contact from '../pages/Contact';
 import logo from '../assets/img/logo.png';
-
+import { FaPhoneAlt } from "react-icons/fa";
 
 function App() {
 
   return <div className='App'>
-    <nav className='navbar'>
+  <nav className='navbar'>
     <div className="logo">
       salon<img src={logo} alt="logo" />
     </div>
@@ -25,12 +25,15 @@ function App() {
         <Link to='/about' > O nas</Link> 
       </li >
       <li>
-         <Link to='/prices' > Cennik</Link> 
+        <Link to='/prices' > Cennik</Link> 
       </li>
       <li>
-         <Link to='/contact' >Kontakt</Link> 
+        <Link to='/contact' >Kontakt</Link> 
       </li>
     </ul>
+    <div className="phone-number">
+      <span><FaPhoneAlt/> 000 000 000</span>
+    </div>
   </nav>
   <Routes>
     <Route path='/' element={<Home/>}/>
